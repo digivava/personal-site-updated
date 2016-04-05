@@ -1,6 +1,6 @@
 require 'sinatra'
 
-class MyCoolSite < Sinatra::Base  
+class MyCoolSite < Sinatra::Base
   get '/' do
     send_file 'static/index.html'
   end
@@ -12,7 +12,7 @@ class MyCoolSite < Sinatra::Base
   end
 
   get '/portfolio' do
-    send_file 'static/portfolio.html'
+    erb :portfolio
   end
 
   get '/blog' do
@@ -28,7 +28,7 @@ class MyCoolSite < Sinatra::Base
   end
 
   get '/portfolio.html' do
-    send_file 'static/portfolio.html'
+    erb :portfolio
   end
 
   get '/blog.html' do
