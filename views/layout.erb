@@ -9,16 +9,22 @@
 </head>
 
 <body>
-  <header>
-    <h1>Change This For Each Page</h1>
-  </header>
+  <% if @page_title == "Home" %>
+    <header class="splash">
+      <h1>Hi, I'm Val!</h1>
+    </header>
+  <% else %>
+    <header>
+      <h1><%= @page_title %></h1>
+    </header>
+  <% end %>
 
   <nav>
     <ul class="horizontal">
-      <li><a href="index.html">・Home・</a></li>
-      <li><a href="about.html">・About・</a></li>
-      <li><a href="portfolio.html">・Code・</a></li>
-      <li><a href="blog.html">・Blog・</a></li>
+      <li><a href="/">・Home・</a></li>
+      <li><a href="/about">・About・</a></li>
+      <li><a href="/code">・Code・</a></li>
+      <li><a href="/blog">・Blog・</a></li>
     </ul>
   </nav>
 

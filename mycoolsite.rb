@@ -2,35 +2,23 @@ require 'sinatra'
 
 class MyCoolSite < Sinatra::Base
   get '/' do
-    send_file 'static/index.html'
-  end
-
-  get '/index.html' do
-    send_file 'static/index.html'
+    @page_title = "Home"
+    erb :index
   end
 
   get '/about' do
+    @page_title = "About"
     erb :about
   end
 
-  get '/about.html' do
-    erb :about
-  end
-
-  get '/portfolio' do
-    erb :portfolio
-  end
-
-  get '/portfolio.html' do
-    erb :portfolio
+  get '/code' do
+    @page_title = "Code"
+    erb :code
   end
 
   get '/blog' do
-    send_file 'static/blog.html'
-  end
-
-  get '/blog.html' do
-    send_file 'static/blog.html'
+    @page_title = "Blog"
+    erb :blog
   end
 
   get '/blog/03-22-2016.html' do
