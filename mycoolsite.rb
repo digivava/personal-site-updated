@@ -5,30 +5,28 @@ class MyCoolSite < Sinatra::Base
     send_file 'static/index.html'
   end
 
-# why does this require .html when jeremy's didn't?
+  get '/index.html' do
+    send_file 'static/index.html'
+  end
 
   get '/about' do
-    send_file 'static/about.html'
+    erb :about
+  end
+
+  get '/about.html' do
+    erb :about
   end
 
   get '/portfolio' do
     erb :portfolio
   end
 
-  get '/blog' do
-    send_file 'static/blog.html'
-  end
-
-  get '/index.html' do
-    send_file 'static/index.html'
-  end
-
-  get '/about.html' do
-    send_file 'static/about.html'
-  end
-
   get '/portfolio.html' do
     erb :portfolio
+  end
+
+  get '/blog' do
+    send_file 'static/blog.html'
   end
 
   get '/blog.html' do
