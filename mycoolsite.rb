@@ -21,12 +21,14 @@ class MyCoolSite < Sinatra::Base
     erb :blog
   end
 
-  get '/blog/03-22-2016.html' do
-    send_file 'static/blog/03-22-2016.html'
+  get '/blog/03-22-2016' do
+    @page_title = "Blog"
+    erb :'blog/03-22-2016'
   end
 
-  get '/blog/03-25-2016.html' do
-    send_file 'static/blog/03-25-2016.html'
+  get '/blog/03-25-2016' do
+    @page_title = "Blog"
+    erb :'blog/03-25-2016'
   end
 
 run!
